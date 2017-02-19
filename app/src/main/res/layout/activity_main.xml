@@ -11,19 +11,47 @@
     tools:context="uk.org.beynon.flashcards.MainActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:id="@+id/scoreView"
+        android:layout_alignParentRight="true" />
+
+    <TextView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:text="10"
         android:gravity="center"
         android:textSize="300sp"
-        android:id="@+id/flashNumber"
-        android:layout_above="@+id/nextButton" />
+        android:id="@+id/flashNumber" />
 
-    <Button
-        android:layout_alignParentBottom="true"
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flashNumber"
+        android:textAlignment="center"
+        android:id="@+id/flashNumberWord"
+        android:text="Ten" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Next"
-        android:id="@+id/nextButton"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Wrong"
+            android:id="@+id/wrongButton" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Right"
+            android:id="@+id/rightButton" />
+
+    </LinearLayout>
+
 
 </RelativeLayout>
