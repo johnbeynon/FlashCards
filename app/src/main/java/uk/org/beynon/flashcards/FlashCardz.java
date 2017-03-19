@@ -33,7 +33,7 @@ public class FlashCardz {
         return mFlashCards;
     }
 
-    public ArrayList<FlashCard> getCards(int minimum, int maximum, int numberOfCards) {
+    public ArrayList<FlashCard> getCards(int minimum, int max) {
         return mFlashCards;
     }
 

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Flash Cards</string>
     <string name="numberOne">One</string>
+    <string name="numberTwo">Two</string>
+    <string name="numberThree">Three</string>
+    <string name="numberFour">Four</string>
     <string name="title_activity_which_number">WhichNumber</string>
 </resources>

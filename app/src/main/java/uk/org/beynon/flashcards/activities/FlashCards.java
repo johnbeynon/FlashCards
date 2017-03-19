@@ -13,12 +13,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
 
+import uk.org.beynon.flashcards.FlashCardz;
 import uk.org.beynon.flashcards.models.FlashCard;
 import uk.org.beynon.flashcards.R;
 
 public class FlashCards extends AppCompatActivity {
 
-    final private ArrayList<FlashCard> mFlashCards = new ArrayList<FlashCard>();
+    FlashCardz flashCardz = new FlashCardz();
+    public ArrayList<FlashCard> mFlashCards;
     int mScore = 0;
     int mQuestion = 1;
 
@@ -29,16 +31,7 @@ public class FlashCards extends AppCompatActivity {
 
         updateQuestionNumber();
 
-        mFlashCards.add(new FlashCard(1, getString(R.string.numberOne)));
-        mFlashCards.add(new FlashCard(2, "Two"));
-        mFlashCards.add(new FlashCard(3, "Three"));
-        mFlashCards.add(new FlashCard(4, "Four"));
-        mFlashCards.add(new FlashCard(5, "Five"));
-        mFlashCards.add(new FlashCard(6, "Six"));
-        mFlashCards.add(new FlashCard(7, "Seven"));
-        mFlashCards.add(new FlashCard(8, "Eight"));
-        mFlashCards.add(new FlashCard(9, "Nine"));
-        mFlashCards.add(new FlashCard(10, "Ten"));
+        mFlashCards = flashCardz.getCards();
 
         Button rightButton = (Button) findViewById(R.id.rightButton);
 
