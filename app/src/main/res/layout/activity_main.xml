@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,67 +8,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="uk.org.beynon.flashcards.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Question: 0"
-        android:id="@+id/questionNumberView"
-        android:layout_alignParentLeft="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Score: 0"
-        android:id="@+id/scoreView"
-        android:layout_alignParentRight="true" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="10"
-        android:gravity="center"
-        android:textSize="300sp"
-        android:id="@+id/flashNumber" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/flashNumber"
-        android:textAlignment="center"
-        android:id="@+id/flashNumberWord"
-        android:text="Ten" />
-
-    <LinearLayout
-        android:id="@+id/buttons"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:layout_marginRight="8dp"
             android:textColor="@android:color/white"
             android:textSize="50sp"
-            android:text="\u2717"
+            android:text="Flash Cards"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:id="@+id/wrongButton" />
+            android:id="@+id/flash_cards_button" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:layout_marginLeft="8dp"
             android:textColor="@android:color/white"
             android:textSize="50sp"
-            android:text="\u2713"
+            android:text="Numbers"
             android:backgroundTint="@android:color/holo_green_dark"
-            android:id="@+id/rightButton" />
+            android:id="@+id/numbers_button" />
 
     </LinearLayout>
 
 
-</RelativeLayout>
+

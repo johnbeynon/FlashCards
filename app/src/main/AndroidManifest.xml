@@ -15,6 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.FlashCards" />
+        <activity
+            android:name=".activities.WhichNumber"
+            android:label="Which number?" />
     </application>
 
 </manifest>
