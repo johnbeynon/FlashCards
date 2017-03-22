@@ -12,10 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -29,6 +26,7 @@ import uk.org.beynon.flashcards.models.FlashCard;
 public class WhichNumber extends AppCompatActivity {
 
     FlashCardz flashCardz = new FlashCardz();
+    ArrayList<FlashCard> flashCards;
     FlashCard randomCard;
 
     @Override
@@ -36,8 +34,8 @@ public class WhichNumber extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_which_number);
 
-        final ArrayList<FlashCard> flashCards = flashCardz.getCards();
-        GridAdapter gridAdapter = new GridAdapter(this, flashCardz.getCards());
+        flashCards = flashCardz.getRandomizedCards();
+        GridAdapter gridAdapter = new GridAdapter(this, flashCards);
         GridView gridView = (GridView) findViewById(R.id.whichNumberGrid);
         gridView.setAdapter(gridAdapter);
 
@@ -77,7 +75,8 @@ public class WhichNumber extends AppCompatActivity {
     }
 
     private void nextCard() {
-        randomCard = flashCardz.randomCard();
+        Random r = new Random();
+        randomCard = flashCards.get(r.nextInt(flashCards.size()));
         MediaPlayer mediaPlayer = MediaPlayer.create(WhichNumber.this, randomCard.getFileName());
         mediaPlayer.start();
     }

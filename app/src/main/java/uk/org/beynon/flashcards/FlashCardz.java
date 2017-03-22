@@ -5,6 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Random;
 
+import uk.org.beynon.flashcards.activities.FlashCards;
 import uk.org.beynon.flashcards.models.FlashCard;
 
 /**
@@ -35,6 +36,19 @@ public class FlashCardz {
 
     public ArrayList<FlashCard> getCards(int minimum, int max) {
         return mFlashCards;
+    }
+
+    public ArrayList<FlashCard> getRandomizedCards() {
+        ArrayList<FlashCard> mRandomCards = new ArrayList<FlashCard>();
+
+        while (mFlashCards.size() != 0) {
+            Random r = new Random();
+            int index = r.nextInt(mFlashCards.size());
+            FlashCard card = mFlashCards.get(index);
+            mRandomCards.add(card);
+            mFlashCards.remove(index);
+        }
+        return mRandomCards;
     }
 
     public FlashCard randomCard() {
